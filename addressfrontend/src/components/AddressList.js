@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAddresses } from '../actions';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const AddressList = () => {
   const dispatch = useDispatch();
@@ -14,6 +15,20 @@ const AddressList = () => {
 
   return (
     <div>
+            {/* Navbar */}
+            <nav className="navbar navbar-expand navbar-light bg-light">
+        <div className="container">
+          <div className="collapse navbar-collapse justify-content-end">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+              <Link to="/" className="btn btn-secondary ml-1">Back to Home</Link> {/* Styled "Back to Home" button */}
+
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
       <h1 className="text-center mb-4">Address Book</h1>
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
